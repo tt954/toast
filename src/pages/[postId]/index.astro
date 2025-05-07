@@ -1,0 +1,19 @@
+---
+import type { GetStaticPaths } from "astro";
+import PostLayout from "../../layouts/PostLayout.astro"
+import { posts } from "../../posts";
+
+export const getStaticPaths = (() => {
+    return posts.map(post => ({
+        params: { postId: post.id }
+    }));
+}) satisfies GetStaticPaths;
+
+const { postId } = Astro.params;
+const post = posts.find(post => post.id == postId)
+---
+
+<PostLayout>
+    <h1>{post?.title || "Post title"}</h1>
+    <p>{post?.content}</p>
+</PostLayout>

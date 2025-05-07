@@ -1,5 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import { posts } from "../posts"
 ---
 
 <Layout>
@@ -13,7 +14,7 @@ import Layout from '../layouts/Layout.astro';
 		<section class="mt-4 text-gray-700">
 			<p>Hi there! I'm a software engineer located in Brooklyn, New York. I enjoy building intuitive and performant web applications with React and Typescript.</p>
 			<p>I love learning, especially about the little details and doing deep dives into how things work.</p>
-			<p>You can find me on <a class="text-blue-600 underline" href="https://github/com/tt954" target="_blank" rel="noopener noreferrer">Github</a>.</p>
+			<p>Find me on <a class="text-blue-600 underline" href="https://github/com/tt954" target="_blank" rel="noopener noreferrer">Github</a>.</p>
 		</section>
 		<!-- Projects -->
 		<section class="py-12">
@@ -23,6 +24,10 @@ import Layout from '../layouts/Layout.astro';
 		<section>
 			<h2 class="text-2xl font-bold mb-2">TIL</h2>
 			<p>Today I Learn is a series of posts about random things I learn today.</p>
+			{posts.map(post => (<li>
+				<a href={`${post.id}`}>{post.title}</a>
+				<p>{post.createdAt.toString()}</p>
+			</li>))}
 		</section>
 	</main>
 </Layout> 
