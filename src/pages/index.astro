@@ -1,27 +1,28 @@
-<!-- ---
-import Welcome from '../components/Welcome.astro';
+---
 import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
 ---
 
 <Layout>
-	<Welcome />
-</Layout> -->
-
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width" />
-    <meta name="generator" content={Astro.generator} >
-    <title>ttiffany</title>
-  </head>
-  <body>
-    <a href="/">Home</a>
-    <a href="/blog/">Blog</a>
-
-    <h1>Portfolio</h1>
-  </body>
-</html>
+	<main class="w-full lg:w-3/4 md:w-8/12 mx-auto mt-24">
+		<section class="flex items-baseline gap-2">
+			<img src="./toast-profile.jpg" class="w-24 h-24 rounded-full object-cover"/>
+			<h1 class="text-3xl font-bold sm:text-4xl">toast<h1>
+		</section>
+		
+		<!-- About -->
+		<section class="mt-4 text-gray-700">
+			<p>Hi there! I'm a software engineer located in Brooklyn, New York. I enjoy building intuitive and performant web applications with React and Typescript.</p>
+			<p>I love learning, especially about the little details and doing deep dives into how things work.</p>
+			<p>You can find me on <a class="text-blue-600 underline" href="https://github/com/tt954" target="_blank" rel="noopener noreferrer">Github</a>.</p>
+		</section>
+		<!-- Projects -->
+		<section class="py-12">
+			<h2 class="text-2xl font-bold mb-6">Projects</h2>
+		</section>
+		<!-- Blog -->
+		<section>
+			<h2 class="text-2xl font-bold mb-2">TIL</h2>
+			<p>Today I Learn is a series of posts about random things I learn today.</p>
+		</section>
+	</main>
+</Layout> 
