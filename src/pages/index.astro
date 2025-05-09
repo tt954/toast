@@ -1,6 +1,11 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import { posts } from "../posts";
+import { getCollection } from "astro:content";
+import type { CollectionEntry } from "astro:content";
+
+type Post = CollectionEntry<"post">;
+
+const posts = await getCollection("post");
 ---
 
 <Layout>
@@ -49,12 +54,12 @@ import { posts } from "../posts";
       </p>
       <ul class="space-y-2 my-2">
         {
-          posts.map((post) => (
+          posts.map((post: Post) => (
             <li>
               <a href={`${post.id}`} class="font-medium">
-                {post.title}
+                {post.data.title}
               </a>
-              <p>{post.createdAt.toLocaleString()}</p>
+              <p>{post.data.pubDate.toLocaleString()}</p>
             </li>
           ))
         }
