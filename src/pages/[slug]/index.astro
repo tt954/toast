@@ -1,0 +1,23 @@
+---
+import type { GetStaticPaths } from "astro";
+import Layout from "../../layouts/Layout.astro";
+import { getCollection, getEntry, render } from "astro:content";
+
+export const getStaticPaths = (async () => {
+  const posts = await getCollection("post");
+  return posts.map((post) => ({
+    params: { slug: post.id },
+  }));
+}) satisfies GetStaticPaths;
+
+const { slug } = Astro.params;
+const post = await getEntry("post", slug);
+const { Content } = await render(post);
+---
+
+<Layout>
+  <a class="text-gray-600 hover:text-gray-900" href="/">Back to homepage</a>
+  <article class="prose lg:prose-xl mt-6">
+    <Content />
+  </article>
+</Layout>
