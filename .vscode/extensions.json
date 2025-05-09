@@ -1,11 +1,8 @@
 {
   "recommendations": ["astro-build.astro-vscode", "bradlc.vscode-tailwindcss"],
-
   "editor.formatOnSave": true,
   "editor.minimap.enabled": false,
   "editor.rulers": [80],
   "editor.suggestSelection": "first",
   "editor.tabSize": 2,
-  "editor.wordWrap": "wordWrapColumn",
-  "editor.wordWrapColumn": 80
 }
