@@ -4,8 +4,10 @@ import { getCollection } from "astro:content";
 import type { CollectionEntry } from "astro:content";
 
 type Post = CollectionEntry<"post">;
+type Project = CollectionEntry<"project">;
 
-const posts = await getCollection("post");
+const posts: Post[] = await getCollection("post");
+const projects: Project[] = await getCollection("project");
 ---
 
 <Layout>
@@ -32,7 +34,7 @@ const posts = await getCollection("post");
         dives into how things work.
       </p>
       <p>
-        Find me on <a
+        You can find me on <a
           class="text-blue-600 underline"
           href="https://github/com/tt954"
           target="_blank"
@@ -43,7 +45,19 @@ const posts = await getCollection("post");
 
     <!-- Projects -->
     <section class="py-12">
-      <h2 class="text-2xl font-bold mb-6">Projects</h2>
+      <h2 class="text-2xl font-bold">Projects</h2>
+      <ul>
+        {
+          projects.map((project: Project) => (
+            <li key={project.id}>
+              <a href={project.data.src} class="underline text-blue-500">
+                {project.data.name}
+              </a>{" "}
+              - {project.data.description}
+            </li>
+          ))
+        }
+      </ul>
     </section>
     <!-- Blog -->
 
