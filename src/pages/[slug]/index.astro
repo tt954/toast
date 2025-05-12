@@ -2,6 +2,9 @@
 import type { GetStaticPaths } from "astro";
 import Layout from "../../layouts/Layout.astro";
 import { getCollection, getEntry, render } from "astro:content";
+import type { CollectionEntry } from "astro:content";
+
+type Post = CollectionEntry<"post">;
 
 export const getStaticPaths = (async () => {
   const posts = await getCollection("post");
@@ -12,12 +15,12 @@ export const getStaticPaths = (async () => {
 
 const { slug } = Astro.params;
 const post = await getEntry("post", slug);
-const { Content } = await render(post);
+const { Content } = await render(post as Post);
 ---
 
 <Layout>
   <a class="text-gray-600 hover:text-gray-900" href="/">Back to homepage</a>
-  <article class="prose lg:prose-xl mt-6">
+  <article class="prose mt-6">
     <Content />
   </article>
 </Layout>

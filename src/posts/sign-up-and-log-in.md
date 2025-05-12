@@ -5,11 +5,9 @@ pubDate: 5/9/2025
 
 # Signing Up and Logging In
 
-The signup and login pages are often the very first interaction a user has with your application or website. As such, they serve as a gateway into your application. A well-designed flow of elements should guide the user effortlessly from start to finish. Follow along as I learn about the details of making a good signup/login page.
+The signup and login pages are often the very first interaction a user has with your application or website. As such, they serve as a gateway into your application. A well-designed page should guide users from start to finish effortlessly. Once they are authenticated, the application should give them access to the protected routes and resources accordingly. Follow along as I build the signup and login pages.
 
 ## User Experience (UX) Considerations
-
-Creating a positive first impression is key. Here are some UX principles to keep in mind when designing your signup and login pages:
 
 - **Autofocus on the primary input field** Save your users a click by automatically focusing on the field they are most likely to interact with first. For a login page, this is usually the email or username field.
 - **Leverage specialized mobile keyboards** Semantic HTML can significantly improve the mobile experience. By setting the correct type attribute for input fields (e.g., `type="email"` for email addresses, `type="tel"` for phone numbers, `type="password"` for passwords), you trigger the display of optimized keyboards with relevant characters, making data entry faster and easier for mobile users.
@@ -69,6 +67,6 @@ Once a user is authenticated and a session is established, the next step is auth
   - Optimistic check using the session token stored in the cookie
   - Secure check usin the session data stored in the database
 
-By focusing on both the user experience and the underlying implementation details, you can create signup and login pages that are not only functional but also user-friendly and secure. With all of that being said, there is so much more to learn about the Authentication and Authorization process, but I will stop here (for now).
+By focusing on both the user experience and the underlying implementation details, you can create signup and login pages that are not only functional but also user-friendly and secure. I've implemented user creation and session management [here](https://github.com/tt954/news-demo). With all of that being said, there is so much more to learn about the Authentication and Authorization process, check out the resources below for more information.
 
-> **References** > [OWASP Authentication Cheat Sheet](https://cheatsheetseries.owasp.org/cheatsheets/Authentication_Cheat_Sheet.html) > [OWASP Password Storage Cheet Sheet](https://cheatsheetseries.owasp.org/cheatsheets/Password_Storage_Cheat_Sheet.html) > [Lucia: Implementing auth from scratch](https://lucia-auth.com/sessions/overview) > [The Copenhagen Handbook](https://thecopenhagenbook.com/)
+> **References** [OWASP Authentication Cheat Sheet](https://cheatsheetseries.owasp.org/cheatsheets/Authentication_Cheat_Sheet.html) [OWASP Password Storage Cheet Sheet](https://cheatsheetseries.owasp.org/cheatsheets/Password_Storage_Cheat_Sheet.html) [Lucia: Implementing auth from scratch](https://lucia-auth.com/sessions/overview) [The Copenhagen Handbook](https://thecopenhagenbook.com/)
