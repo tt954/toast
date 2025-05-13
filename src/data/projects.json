@@ -1,3 +1,4 @@
 [
-    {"id": 1, "name": "news-demo", "src": "https://github.com/tt954/news-demo", "description": "A minimal news and blog site built with Next.js to explore its latest features"}
+    {"id": 1, "name": "news-demo", "src": "https://github.com/tt954/news-demo", "description": "A minimal news and blog site built with Next.js to explore its latest features"},
+    {"id": 2, "name": "search-demo", "src": "https://github.com/tt954/search-demo", "description": "Exploring artworks from the Art Institute of Chicago API using Tanstack Query"}
 ]
