@@ -11,73 +11,73 @@ const projects: Project[] = await getCollection("project");
 ---
 
 <Layout>
-  <main>
-    <section class="flex items-baseline gap-2">
-      <img
-        src="./toast-profile.jpg"
-        class="w-24 h-24 rounded-full object-cover"
-      />
-      <h1 class="text-3xl font-bold sm:text-4xl">
-        toast<h1></h1>
-      </h1>
-    </section>
+  <header class="flex items-baseline gap-2">
+    <img
+      src="./toast-profile.jpg"
+      class="w-24 h-24 rounded-full object-cover"
+    />
+    <h1 class="text-3xl font-bold sm:text-4xl">
+      toast<h1></h1>
+    </h1>
+  </header>
 
-    <!-- About -->
-    <section class="mt-4 text-gray-700">
-      <p>
-        Hi there! I'm a software engineer located in Brooklyn, New York. I enjoy
-        building intuitive and performant web applications with React and
-        Typescript.
-      </p>
-      <p>
-        I love learning, especially about the little details and doing deep
-        dives into how things work.
-      </p>
-      <p>
-        You can find me on <a
-          class="text-blue-600 underline"
-          href="https://github/com/tt954"
-          target="_blank"
-          rel="noopener noreferrer">Github</a
-        >.
-      </p>
-    </section>
+  <!-- About -->
+  <section class="mt-4 text-gray-700">
+    <p>
+      Hi there! I'm a software engineer located in Brooklyn, New York. I enjoy
+      building intuitive and performant web applications with React and
+      Typescript.
+    </p>
+    <p>
+      I love learning, especially about the little details and doing deep dives
+      into how things work.
+    </p>
+    <p>
+      You can find me on <a
+        class="text-blue-600 underline"
+        href="https://github/com/tt954"
+        target="_blank"
+        rel="noopener noreferrer">Github</a
+      >.
+    </p>
+  </section>
 
-    <!-- Projects -->
-    <section class="py-12">
-      <h2 class="text-2xl font-bold">Projects</h2>
-      <ul>
-        {
-          projects.map((project: Project) => (
-            <li key={project.id}>
-              <a href={project.data.src} class="underline text-blue-500">
-                {project.data.name}
-              </a>{" "}
-              - {project.data.description}
-            </li>
-          ))
-        }
-      </ul>
-    </section>
-    <!-- Blog -->
+  <!-- Projects -->
+  <section class="py-12">
+    <h2 class="text-2xl font-bold">Projects</h2>
+    <ul>
+      {
+        projects.map((project: Project) => (
+          <li key={project.id}>
+            <a href={project.data.src} class="underline text-blue-600">
+              {project.data.name}
+            </a>{" "}
+            - {project.data.description}
+          </li>
+        ))
+      }
+    </ul>
+  </section>
+  <!-- Blog -->
 
-    <section>
-      <h2 class="text-2xl font-bold">TIL</h2>
-      <p>
-        Today I Learn is a series of posts about random things I learned today.
-      </p>
-      <ul class="space-y-2 my-2">
-        {
-          posts.map((post: Post) => (
-            <li>
-              <a href={`${post.id}`} class="font-medium">
-                {post.data.title}
-              </a>
-              <p>{post.data.pubDate.toLocaleString()}</p>
-            </li>
-          ))
-        }
-      </ul>
-    </section>
-  </main>
+  <section>
+    <h2 class="text-2xl font-bold">TIL</h2>
+    <p>
+      Today I Learn is a series of posts about random things I learned today.
+    </p>
+    <ul class="space-y-2 my-2">
+      {
+        posts.map((post: Post) => (
+          <li>
+            <a href={`${post.id}`} class="font-medium hover:text-gray-500">
+              {post.data.title}
+            </a>
+            <p class="text-sm text-gray-500">
+              {post.data.pubDate.toLocaleDateString()}
+            </p>
+          </li>
+        ))
+      }
+    </ul>
+  </section>
 </Layout>

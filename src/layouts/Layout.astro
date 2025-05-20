@@ -1,19 +1,31 @@
 ---
 import "../styles/global.css";
+
+const { title = "toast", description = "toast's personal website" } =
+  Astro.props;
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/jpg" href="/toast-profile.jpg" />
     <meta name="generator" content={Astro.generator} />
-    <title>toast</title>
+    <meta name="description" content={description} />
+    <title>{title}</title>
   </head>
-  <body
-    class="bg-white text-gray-800 font-sans leading-relaxed h-screen w-full lg:w-3/4 md:w-8/12 mx-auto mt-24"
-  >
-    <slot />
+  <body class="bg-white text-gray-800 font-sans leading-relaxed min-h-screen">
+    <main class="pt-24 mx-auto px-8 lg:w-3/4 md:w-8/12">
+      <slot />
+    </main>
+
+    <footer
+      class="pt-20 mx-auto px-8 py-8 lg:w-3/4 md:w-8/12 flex justify-between"
+    >
+      <a href="https://github.com/tt954/toast" class="underline text-blue-600"
+        >Source code</a
+      >
+    </footer>
   </body>
 </html>
